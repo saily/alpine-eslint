@@ -1,7 +1,7 @@
 FROM mhart/alpine-node:latest
 MAINTAINER Daniel Widerin <daniel@widerin.net>
 
-ENV ESLINT_VERSION=3.0.0 \
+ENV ESLINT_VERSION=5.6.0 \
     PATH=/usr/lib/node_modules/.bin:$PATH
 
 RUN npm install -g eslint@${ESLINT_VERSION} && \
