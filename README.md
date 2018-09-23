@@ -15,4 +15,4 @@ Examples
 --------
 
     $ docker run widerin/alpine-eslint eslint --version
-    v3.0.0
+    v5.6.0
