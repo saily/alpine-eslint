@@ -1,8 +1,8 @@
 FROM mhart/alpine-node:latest
+
 MAINTAINER Daniel Widerin <daniel@widerin.net>
 
-ENV ESLINT_VERSION=5.6.0 \
-    PATH=/usr/lib/node_modules/.bin:$PATH
+ARG ESLINT_VERSION="6.8.x"
 
 RUN npm install -g eslint@${ESLINT_VERSION} && \
     rm -rf /usr/share/man /tmp/* \
@@ -12,4 +12,6 @@ RUN npm install -g eslint@${ESLINT_VERSION} && \
            /usr/lib/node_modules/npm/html && \
     find /usr/lib/node_modules/npm -name test -o -name .bin -type d | xargs rm -rf
 
-CMD /usr/lib/node_modules/.bin/eslint
+ENV PATH=/usr/lib/node_modules/.bin:$PATH
+
+CMD eslint
